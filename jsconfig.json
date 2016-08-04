@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "target": "ES6"
+  },
+  "files": [
+    "typings/node/node.d.ts",
+    "server/bootstrap.js"
+  ]
+}
