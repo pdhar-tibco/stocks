@@ -3,6 +3,8 @@
     "version": "1.0.0",
     "description": "Stock tracker in Angular 2",
     "main": "server/bootstrap.js",
+    "express": "server/bootstrap-express.js",
+    "koa": "server/bootstrap-koa.js",
     "scripts": {
         "start": "npm install && node ./node_modules/gulp/bin/gulp.js go",
         "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,7 +12,7 @@
     "author": "Pranab Dhar",
     "license": "ISC",
     "dependencies": {
-        "@angular/common": "2.0.0-rc.4", 
+        "@angular/common": "2.0.0-rc.4",
         "@angular/compiler": "2.0.0-rc.4",
         "@angular/core": "2.0.0-rc.4",
         "@angular/forms": "0.2.0",
@@ -24,13 +26,8 @@
         "bootstrap": "^3.3.7",
         "core-js": "^2.4.0",
         "es6-shim": "^0.35.1",
-        "zone.js": "^0.6.12",
-        "reflect-metadata": "^0.1.3",
-        "rxjs": "5.0.0-beta.6",
-        "systemjs": "0.19.36",
-
-        
-        "koa": "^1.2.1", 
+        "express": "^4.14.0",
+        "koa": "^1.2.1",
         "koa-cors": "0.0.16",
         "koa-router": "^5.4.0",
         "koa-send": "^3.2.0",
@@ -38,8 +35,11 @@
         "promise": "^7.1.1",
         "q": "^1.4.1",
         "qs": "^6.2.1",
-        "yahoo-finance": "^0.2.12"
-
+        "reflect-metadata": "^0.1.3",
+        "rxjs": "5.0.0-beta.6",
+        "systemjs": "0.19.36",
+        "yahoo-finance": "^0.2.12",
+        "zone.js": "^0.6.12"
     },
     "devDependencies": {
         "del": "^2.2.1",

@@ -1,4 +1,4 @@
-/// <reference path="../typings/globals/es6-shim/index.d.ts" />
+/// <reference path="../typings/globals/core-js/index.d.ts" />
 import {bootstrap} from '@angular/platform-browser-dynamic';
 import {HTTP_PROVIDERS} from '@angular/http';
 
