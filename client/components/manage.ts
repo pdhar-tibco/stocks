@@ -1,10 +1,10 @@
-import {Component} from '@angular/core';
-import {FORM_PROVIDERS, FORM_DIRECTIVES, FormBuilder, ControlGroup} from '@angular/common';
+import {Component} from "@angular/core";
+import {FORM_PROVIDERS, FORM_DIRECTIVES, FormBuilder, ControlGroup} from "@angular/common";
 
-import {StocksService} from '../services/stocks';
+import {StocksService} from "../services/stocks";
 
 @Component({
-  selector: 'manage',
+  selector: "manage",
   viewProviders: [FORM_PROVIDERS, StocksService],
   directives: [FORM_DIRECTIVES],
   template: `
@@ -39,7 +39,7 @@ export class Manage {
     this.symbols = service.get();
 
     this.stockForm = builder.group({
-      stock: ['']
+      stock: [""]
     });
   }
 

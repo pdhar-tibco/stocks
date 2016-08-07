@@ -1,7 +1,7 @@
-import { Inject } from '@angular/core';
-import { Http } from '@angular/http';
+import { Inject } from "@angular/core";
+import { Http } from "@angular/http";
 
-let stocks: Array<string> = ['AAPL', 'GOOG', 'FB', 'AMZN', 'TWTR'];
+let stocks: Array<string> = ["AAPL", "GOOG", "FB", "AMZN", "TWTR"];
 
 export interface StockInterface {
   symbol: string;
@@ -32,7 +32,7 @@ export class StocksService {
 
   load(symbols) {
     if (symbols) {
-      return this.http.get('/stocks/snapshot?symbols=' + symbols.join());
+      return this.http.get("/stocks/snapshot?symbols=" + symbols.join());
     }
   }
 }

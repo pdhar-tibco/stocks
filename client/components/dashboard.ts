@@ -1,10 +1,10 @@
-import {Component} from '@angular/core';
+import {Component} from "@angular/core";
 
-import {Summary} from './summary';
-import {StocksService, StockInterface} from '../services/stocks';
+import {Summary} from "./summary";
+import {StocksService, StockInterface} from "../services/stocks";
 
 @Component({
-  selector: 'dashboard',
+  selector: "dashboard",
   viewProviders: [StocksService],
   directives: [Summary],
   template: `

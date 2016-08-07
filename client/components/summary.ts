@@ -1,10 +1,10 @@
-import {Component} from '@angular/core';
+import {Component} from "@angular/core";
 
-import {StockInterface} from '../services/stocks';
+import {StockInterface} from "../services/stocks";
 
 @Component({
-  selector: 'summary',
-  inputs: ['stock'],
+  selector: "summary",
+  inputs: ["stock"],
   template: `
 <div class="mdl-card stock-card mdl-shadow--2dp" [ngClass]="{increase: isPositive(), decrease: isNegative()}" style="width: 100%;">
   <span *ngIf="stock">
