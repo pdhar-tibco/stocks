@@ -1,7 +1,6 @@
-/// <reference path="../typings/globals/core-js/index.d.ts" />
-import {bootstrap} from "@angular/platform-browser-dynamic";
-import {HTTP_PROVIDERS} from "@angular/http";
+/// <reference path="../typings/index.d.ts" />
+import {platformBrowserDynamic} from "@angular/platform-browser-dynamic";
 
-import {App} from "./components/app";
+import {AppModule} from "./components/app.module";
 
-bootstrap(App, [HTTP_PROVIDERS]);
+platformBrowserDynamic().bootstrapModule(AppModule);

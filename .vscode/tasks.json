@@ -2,19 +2,10 @@
     // See https://go.microsoft.com/fwlink/?LinkId=733558
     // for the documentation about the tasks.json format
     "version": "0.1.0",
-    "command": "gulp",
+    "command": "tsc",
     "isShellCommand": true,
-    "args": ["--no-color"],
-    "showOutput": "always",
-    "tasks": [{
-        "taskName": "default",
-        "args": [],
-        "isBuildCommand": true,
-        "isWatching": false,
-        "problemMatcher": [
-            "$lessCompile",
-            "$tsc",
-            "$jshint"
-        ]
-    }]
+    "args": ["-w", "-p", "."],
+    "showOutput": "silent",
+    "isWatching": true,
+    "problemMatcher": "$tsc-watch"
 }

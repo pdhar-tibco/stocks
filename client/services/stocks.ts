@@ -1,4 +1,4 @@
-import { Inject } from "@angular/core";
+import { Injectable, Inject } from "@angular/core";
 import { Http } from "@angular/http";
 
 let stocks: Array<string> = ["AAPL", "GOOG", "FB", "AMZN", "TWTR"];
@@ -9,11 +9,11 @@ export interface StockInterface {
   change: number;
   changeInPercent: number;
 }
-
+@Injectable()
 export class StocksService {
   http: Http;
-  constructor(@Inject(Http) Http) {
-      this.http = Http;
+  constructor( @Inject(Http) Http) {
+    this.http = Http;
   }
 
   get() {

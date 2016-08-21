@@ -5,7 +5,7 @@ import {StocksService, StockInterface} from "../services/stocks";
 
 @Component({
   selector: "dashboard",
-  viewProviders: [StocksService],
+  providers: [StocksService],
   directives: [Summary],
   template: `
     <div class="mdl-grid">

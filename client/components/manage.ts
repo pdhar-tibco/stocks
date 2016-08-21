@@ -1,18 +1,15 @@
 import {Component} from "@angular/core";
-import {FORM_PROVIDERS, FORM_DIRECTIVES, FormBuilder, ControlGroup} from "@angular/common";
-
 import {StocksService} from "../services/stocks";
 
 @Component({
   selector: "manage",
-  viewProviders: [FORM_PROVIDERS, StocksService],
-  directives: [FORM_DIRECTIVES],
+  providers: [StocksService],
   template: `
   <div class="demo-grid-1 mdl-grid">
     <div class="mdl-cell mdl-cell--4-col"></div>
     <div class="mdl-cell mdl-cell--4-col">
-      <form [ngFormModel]="stockForm" style="margin-bottom: 5px;" (submit)="add()">
-        <input ngControl="stock" class="mdl-textfield__input" type="text" placeholder="Add Stock" />
+      <form style="margin-bottom: 5px;" (submit)="add()" #stockForm="ngForm">
+        <input [(ngModel)]="stock" name="m_name" class="mdl-textfield__input" type="text" placeholder="Add Stock" />
       </form>
       <table class="mdl-data-table mdl-data-table--selectable mdl-shadow--2dp" style="width: 100%;">
         <tbody>
@@ -32,19 +29,15 @@ import {StocksService} from "../services/stocks";
 export class Manage {
   symbols: Array<string>;
   service: StocksService;
-  stockForm: ControlGroup;
+  stock = "";
 
-  constructor(service: StocksService, builder: FormBuilder) {
+  constructor(service: StocksService) {
     this.service = service;
     this.symbols = service.get();
-
-    this.stockForm = builder.group({
-      stock: [""]
-    });
   }
 
   add() {
-    this.symbols.push(this.stockForm.value.stock.toUpperCase());
+    this.symbols.push(this.stock.toUpperCase());
   }
 
   remove(symbol) {
