@@ -6,7 +6,8 @@ import {StocksService, StockInterface} from "../services/stocks";
 @Component({
   selector: "dashboard",
   providers: [StocksService],
-  directives: [Summary],
+  viewProviders: [Summary],
+  // directives: [Summary],
   template: `
     <div class="mdl-grid">
       <div class="mdl-cell mdl-cell--12-col" *ngIf="!stocks" style="text-align: center;">

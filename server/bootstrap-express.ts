@@ -1,6 +1,10 @@
-/// <reference path="../typings/index.d.ts" />
-import * as express from "express";
-import * as minimist from "minimist";
+/// <reference path="../node_modules/@types/node/index.d.ts" />
+/// <reference path="../node_modules/@types/express/index.d.ts" />
+/// <reference path="../node_modules/@types/express-serve-static-core/index.d.ts" />
+
+
+import * as express from "@types/express";
+import * as minimist from "@types/minimist";
 import * as path from "path";
 
 let yahooFinance = require("yahoo-finance");
@@ -13,7 +17,7 @@ let DIST_DIR = path.join(__dirname, "..", "dist");
 app.use("/lib", express.static(DIST_DIR + "/lib"));
 app.use("/client", express.static(DIST_DIR + "/client"));
 
-let router: express.IRouter = express.Router();
+let router: express.IRouter<any> = express.Router();
 
 // Endpoint to load snapshot data from yahoo finance
 let snapShotHandler: express.RequestHandler

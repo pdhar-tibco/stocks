@@ -4,7 +4,8 @@ import { HttpModule }                        from "@angular/http";
 import { FormsModule }                       from "@angular/forms";
 import { appRouting }                        from "./app.routing";
 import {StocksService}                       from "../services/stocks";
-import {Manage}                             from "./manage";
+import {Manage}                              from "./manage";
+// import { Summary }                           from "./summary";
 
 import { App }                               from "./app";
 
@@ -22,6 +23,7 @@ import { App }                               from "./app";
   declarations: [
     App,
     Manage,
+    // Summary
   ],
   bootstrap: [App]
 })

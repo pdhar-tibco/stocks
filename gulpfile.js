@@ -55,12 +55,12 @@ var PATHS = {
     port: 8080
 };
 
-var tsProject = ts.createProject("tsconfig.json");
+var tsClientProject = ts.createProject("client/tsconfig.json");
 var tsServerProject = ts.createProject("server/tsconfig.json");
 
 gulp.task("build", function(callback) {
     runSequence(
-        "build-clean", ["tslint","build-libs", "build-ts-client", "build-html", "build-css", "build-img", "build-ts-server","build-config"], callback);
+        "build-clean", ["build-libs", "build-ts-client", "build-html", "build-css", "build-img", "build-ts-server","build-config"], callback);
 });
 
 gulp.task("build-clean", function(callback) {
@@ -90,7 +90,7 @@ gulp.task("build-ts-client", function(callback) {
     return gulp.src(PATHS.client.ts)
         .pipe(changed(PATHS.distClient, { extension: ".js" }))
         .pipe(sourcemaps.init())
-        .pipe(ts(tsProject))
+        .pipe(tsClientProject())
         .pipe(sourcemaps.write("."))
         .pipe(gulp.dest(PATHS.distClient));
 });
@@ -107,7 +107,7 @@ gulp.task("build-ts-server", function(callback) {
     return gulp.src(PATHS.server.ts)
         .pipe(changed(PATHS.distServer, { extension: ".js" }))
         .pipe(sourcemaps.init())
-        .pipe(ts(tsServerProject))
+        .pipe(tsServerProject())
         .pipe(sourcemaps.write("."))
         .pipe(gulp.dest(PATHS.distServer));
 });

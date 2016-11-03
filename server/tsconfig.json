@@ -1,21 +1,27 @@
 {
     "compilerOptions": {
         "target": "es5",
-        "module": "commonjs",
+        "module": "es6",
         "moduleResolution": "node",
         "noImplicitAny": false,
         "removeComments": false,
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
         "sourceMap": true,
-        "outDir": "dist"
+        "outDir": "../dist/server",
+        "typeRoots":[
+            ".",
+            "../node_modules/@types"
+        ],
+        "types":[
+            "node",
+            "core-js",
+            "express",
+            "express-serve-static-core",
+            "minimist"
+        ]
     },
-     "filesGlob": [
-        "./**/*.ts",
-        "../node_modules/**/*.ts",
-        "../node_modules/**/*.js"
-    ],
     "exclude": [
-
+        "node_modules"
     ]
 }

@@ -8,7 +8,19 @@
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
         "sourceMap": true,
-        "outDir": "dist"
+        "outDir": "../dist/client",
+        "typeRoots": [
+            ".",
+            "../node_modules/@types",
+            "../node_modules/@angular"
+        ],
+        "types": [
+            "core-js",
+            "rxjs",
+            "router",
+            "http",
+            "core"
+        ]
     },
     "exclude": [
         "node_modules"
