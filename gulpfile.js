@@ -174,22 +174,24 @@ gulp.task("server.restart", function(callback) {
     });
 });
 
-gulp.task("go", ["build", "server.restart"], function() {
+gulp.task("go", ["build"], function() {
     gulp.watch(PATHS.client.ts, ["build-ts"]);
     gulp.watch(PATHS.client.html, ["build-html"]);
     gulp.watch(PATHS.client.css, ["build-css"]);
     gulp.watch(PATHS.client.img, ["build-img"]);
     gulp.watch(PATHS.client.config, ["build-img"]);
     gulp.watch(packageJson.main, ["server:restart"]);
+    gulp.start("server.restart");
 });
 
-gulp.task("express", ["build", "server.restart"], function() {
+gulp.task("express", ["build"], function() {
     gulp.watch(PATHS.client.ts, ["build-ts"]);
     gulp.watch(PATHS.client.html, ["build-html"]);
     gulp.watch(PATHS.client.css, ["build-css"]);
     gulp.watch(PATHS.client.img, ["build-img"]);
     gulp.watch(PATHS.client.config, ["build-img"]);
     gulp.watch(packageJson.express, ["server:restart"]);
+    gulp.start("server.restart");
 });
 
 // clean up if an error goes unhandled.
