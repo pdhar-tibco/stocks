@@ -24,7 +24,7 @@
         "name": "Launch NodeJS Server",
         "type": "node",
         "request": "launch",
-        "program": "${workspaceRoot}/dist/server/system-express.js",
+        "program": "${workspaceRoot}/dist/server/bootstrap-express.js",
         "stopOnEntry": false,
         "args": [],
         "cwd": "${workspaceRoot}",

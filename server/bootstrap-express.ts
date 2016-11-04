@@ -1,21 +1,26 @@
-/// <reference path="../node_modules/@types/node/index.d.ts" />
 /// <reference path="../node_modules/@types/express/index.d.ts" />
+/// <reference path="../node_modules/@types/core-js/index.d.ts" />
 /// <reference path="../node_modules/@types/express-serve-static-core/index.d.ts" />
+/// <reference path="../node_modules/@types/minimist/index.d.ts" />
+/// <reference path="../node_modules/@types/node/index.d.ts" />
 
-
-import * as express from "@types/express";
-import * as minimist from "@types/minimist";
+import * as express from "express";
+import * as minimist from "minimist";
 import * as path from "path";
+
+let cors = require( "express-cors");
 
 let yahooFinance = require("yahoo-finance");
 
 const app = express();
 let args = minimist(process.argv.slice(2), { default: { port: "8080" } });
 let PORT = args["port"];
-let DIST_DIR = path.join(__dirname, "..", "dist");
-
+let DIST_DIR = path.join(__dirname, "..", "");
+console.log("DIST_DIR:" + DIST_DIR);
+app.use("/", express.static(DIST_DIR+ "/client"));
 app.use("/lib", express.static(DIST_DIR + "/lib"));
 app.use("/client", express.static(DIST_DIR + "/client"));
+app.use(cors());
 
 let router: express.IRouter<any> = express.Router();
 
@@ -70,8 +75,11 @@ let defaultHandler: express.RequestHandler =
   function (req: express.Request,
     res: express.Response,
     next: express.NextFunction): any {
+    console.log("%s - %s %s", new Date().toISOString(), req.method, req.url);
     res.sendFile(DIST_DIR + "/client/index.html");
   };
+
+
 
 router.get("*", defaultHandler);
 

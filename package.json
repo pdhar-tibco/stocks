@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "description": "Stock tracker in Angular 2",
   "main": "server/bootstrap.js",
-  "express": "server/bootstrap-express.js",
+  "express": "dist/server/bootstrap-express.js",
   "koa": "server/bootstrap-koa.js",
   "scripts": {
     "startOld": "npm install && node ./node_modules/gulp/bin/gulp.js go",
-    "start": "gulp go",
+    "start": "gulp server.restart",
     "test": "echo \"Error: no test specified\" && exit 1",
     "tslint": "tslint -c tslint.json **/*.ts"
   },
@@ -36,6 +36,7 @@
     "bootstrap": "^3.3.7",
     "core-js": "^2.4.1",
     "express": "^4.14.0",
+    "express-cors": "0.0.3",
     "jquery": "^3.1.0",
     "koa": "^1.2.1",
     "koa-cors": "0.0.16",
