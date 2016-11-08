@@ -17,10 +17,43 @@ let args = minimist(process.argv.slice(2), { default: { port: "8080" } });
 let PORT = args["port"];
 let DIST_DIR = path.join(__dirname, "..", "");
 console.log("DIST_DIR:" + DIST_DIR);
-app.use("/", express.static(DIST_DIR+ "/client"));
+
+app.use(cors({
+    allowedOrigins: [
+        "localhost:8000"
+    ],
+    methods: [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE",
+      "PATCH",
+      "OPTIONS"
+    ],
+    headers: [
+      "Content-Type",
+      "Authorization",
+      "Content-Length",
+      "X-Requested-With"
+    ]
+}));
+
+// let allowCrossDomain = function(req, res, next) {
+//     if ("OPTIONS" === req.method) {
+//       res.header("Access-Control-Allow-Origin", "*");
+//       res.header("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE,PATCH,OPTIONS");
+//       res.header("Access-Control-Allow-Headers", "Content-Type, Authorization, Content-Length, X-Requested-With");
+//       res.status(200).send("");
+//     }
+//     else {
+//       next();
+//     }
+// };
+
+// app.use(allowCrossDomain);
+app.use("/", express.static(DIST_DIR + "/client"));
 app.use("/lib", express.static(DIST_DIR + "/lib"));
 app.use("/client", express.static(DIST_DIR + "/client"));
-app.use(cors());
 
 let router: express.IRouter<any> = express.Router();
 
@@ -82,9 +115,18 @@ let defaultHandler: express.RequestHandler =
 
 
 router.get("*", defaultHandler);
+// let optionsHandler: express.RequestHandler =
+//   function (req: express.Request,
+//     res: express.Response,
+//     next: express.NextFunction): any {
+//     console.log("%s - %s %s", new Date().toISOString(), req.method, req.url);
+//   };
+// router.options("*", optionsHandler);
 
 
 app.use("/", router);
+
+
 
 app.listen(PORT, function (): any {
   console.log("Server started at http://localhost:" + PORT);

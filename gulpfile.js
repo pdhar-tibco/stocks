@@ -161,7 +161,7 @@ gulp.task("server.restart", function(callback) {
         server.kill();
     }
     var args = minimist(process.argv.slice(2), { default: { port: "8080" } });
-    server = spawn("node", [packageJson.main, "--port", args.port]);
+    server = spawn("node", [packageJson.express, "--port", args.port]);
     server.stdout.on("data", function(data) {
         console.log(data.toString());
         if (started === false) {
