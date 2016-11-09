@@ -19,7 +19,8 @@
             "rxjs",
             "router",
             "http",
-            "core"
+            "core",
+            "node"
         ]
     },
     "exclude": [

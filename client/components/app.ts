@@ -1,12 +1,12 @@
 import {Component} from "@angular/core";
-
 import {Dashboard} from "./dashboard";
 import {Manage} from "./manage";
+import {}  from "@types/node";
 
 
 
 @Component({
-  moduleId: "Stocks",
+  moduleId: module.id,
   selector: "app",
   template: `
   <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
