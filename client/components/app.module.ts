@@ -13,6 +13,7 @@ import { App }                               from "./app";
 
 
 @NgModule({
+  id: "Stocks",
   imports: [
     BrowserModule,
     HttpModule,
