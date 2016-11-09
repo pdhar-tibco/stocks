@@ -12,8 +12,13 @@ export interface StockInterface {
 @Injectable()
 export class StocksService {
   http: Http;
+  prefix: String = "";
   constructor( @Inject(Http) Http) {
     this.http = Http;
+  }
+
+  configure(prefix: String) {
+    this.prefix = prefix || "";
   }
 
   get() {
@@ -32,7 +37,7 @@ export class StocksService {
 
   load(symbols) {
     if (symbols) {
-      return this.http.get("/stocks/snapshot?symbols=" + symbols.join());
+      return this.http.get(this.prefix + "/stocks/snapshot?symbols=" + symbols.join());
     }
   }
 }
