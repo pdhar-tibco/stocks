@@ -6,7 +6,7 @@ import {Manage} from "./manage";
 
 
 @Component({
-  moduleId: "StockApp",
+  moduleId: "Stocks",
   selector: "app",
   template: `
   <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
