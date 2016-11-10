@@ -24,7 +24,10 @@ import {}  from "@types/node";
       <router-outlet></router-outlet>
     </main>
   </div>
-  `
+  `,
+  styleUrls: [
+    "/client/css/app.css"
+  ]
 })
 export class App {
 }

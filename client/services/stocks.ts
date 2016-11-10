@@ -1,5 +1,6 @@
 import { Injectable, Inject } from "@angular/core";
 import { Http } from "@angular/http";
+import {Location} from "@angular/common";
 
 let stocks: Array<string> = ["AAPL", "GOOG", "FB", "AMZN", "TWTR"];
 
@@ -12,9 +13,12 @@ export interface StockInterface {
 @Injectable()
 export class StocksService {
   http: Http;
+  location: Location;
   prefix: String = "";
-  constructor( @Inject(Http) Http) {
+  constructor( @Inject(Http) Http, @Inject(Location) location) {
     this.http = Http;
+    this.location = location;
+    console.log(location.path(true));
   }
 
   configure(prefix: String) {
