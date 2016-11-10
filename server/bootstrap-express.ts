@@ -20,7 +20,8 @@ console.log("DIST_DIR:" + DIST_DIR);
 
 app.use(cors({
     allowedOrigins: [
-        "localhost:8000"
+        "localhost:8000",
+        "*"
     ],
     methods: [
       "GET",
