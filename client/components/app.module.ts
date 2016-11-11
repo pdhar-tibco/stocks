@@ -27,6 +27,12 @@ import { App }                               from "./app";
     Dashboard,
     Summary
   ],
+  exports: [
+    App,
+    Manage,
+    Dashboard,
+    Summary
+  ],
   bootstrap: [App]
 })
-export class AppModule { }
+export class StocksModule { }
