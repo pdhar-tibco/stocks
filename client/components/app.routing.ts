@@ -6,18 +6,18 @@ import {Manage} from "./manage";
 
 export const appRoutes: Routes = [
     {
-        path: "",
-        redirectTo: "Dashboard",
-        pathMatch: "full"
-    },
-    {
         path: "Dashboard",
         component: Dashboard
     },
     {
         path: "Manage",
         component: Manage
-    }
+    },
+    {
+        path: "",
+        redirectTo: "Dashboard",
+        pathMatch: "full"
+    },
 ];
 console.log("[stocks.app.routing]");
 export const appRouting = RouterModule.forRoot(appRoutes, { enableTracing: true, useHash: true });
