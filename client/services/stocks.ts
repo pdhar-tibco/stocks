@@ -14,7 +14,7 @@ export interface StockInterface {
 export class StocksService {
   http: Http;
   location: Location;
-  prefix: String = "";
+  prefix: String = "http://localhost:8080";
   constructor( @Inject(Http) Http, @Inject(Location) location) {
     this.http = Http;
     this.location = location;
