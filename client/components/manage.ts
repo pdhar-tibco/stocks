@@ -1,3 +1,4 @@
+import { StocksModule } from "./app.module";
 import {Component} from "@angular/core";
 import {StocksService} from "../services/stocks";
 
@@ -32,6 +33,7 @@ export class Manage {
   stock = "";
 
   constructor(service: StocksService) {
+    console.log("[stocks.manage]");
     this.service = service;
     this.symbols = service.get();
   }

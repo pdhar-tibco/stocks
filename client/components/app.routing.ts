@@ -19,5 +19,5 @@ export const appRoutes: Routes = [
         component: Manage
     }
 ];
-
+console.log("[stocks.app.routing]");
 export const appRouting = RouterModule.forRoot(appRoutes, { enableTracing: true, useHash: true });

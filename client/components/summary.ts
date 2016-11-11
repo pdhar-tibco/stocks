@@ -23,6 +23,10 @@ export class Summary {
 
   @Input() stock: StockInterface;
 
+  constructor() {
+    console.log("[stocks.summary]");
+  }
+
   isNegative() {
     if (!this.stock || this.stock.change >= 0) {
       return false;

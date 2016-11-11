@@ -1,3 +1,4 @@
+import { StocksModule } from "./app.module";
 import {Component} from "@angular/core";
 import {Dashboard} from "./dashboard";
 import {Manage} from "./manage";
@@ -30,4 +31,7 @@ import {}  from "@types/node";
   ]
 })
 export class App {
+  constructor() {
+    console.log("[stocks.app]");
+  }
 }

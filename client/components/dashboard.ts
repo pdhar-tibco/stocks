@@ -24,6 +24,7 @@ export class Dashboard {
   symbols: Array<string>;
 
   constructor(service: StocksService) {
+    console.log("[stocks.dashboard]");
     this.symbols = service.get();
 
     service.load(this.symbols)

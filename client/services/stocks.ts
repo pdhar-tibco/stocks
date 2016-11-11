@@ -16,6 +16,7 @@ export class StocksService {
   location: Location;
   prefix: String = "http://localhost:8080";
   constructor( @Inject(Http) Http, @Inject(Location) location) {
+    console.log("services.stocks");
     this.http = Http;
     this.location = location;
     console.log(location.path(true));
