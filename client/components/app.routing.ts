@@ -1,3 +1,4 @@
+import { ModuleWithProviders } from "@angular/core";
 import {Routes, RouterModule} from "@angular/router";
 import {Dashboard} from "./dashboard";
 import {Manage} from "./manage";
@@ -20,4 +21,4 @@ export const appRoutes: Routes = [
     },
 ];
 console.log("[stocks.app.routing]");
-export const appRouting = RouterModule.forRoot(appRoutes, { enableTracing: true, useHash: true });
+export const appRouting: ModuleWithProviders = RouterModule.forRoot(appRoutes, { enableTracing: true, useHash: true });
