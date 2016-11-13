@@ -35,7 +35,7 @@ import { App }                               from "./app";
   ],
   bootstrap: [App]
 })
-export class StocksModule {
+export default class StocksModule {
   constructor() {
     console.log("[stocks.app.module]");
   }
