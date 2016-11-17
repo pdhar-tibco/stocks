@@ -8,7 +8,7 @@ import {}  from "@types/node";
 
 @Component({
   moduleId: module.id,
-  selector: "app",
+  selector: "stocks",
   template: `
   <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
     <header class="mdl-layout__header">
