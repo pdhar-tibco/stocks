@@ -30,7 +30,7 @@ import {}  from "@types/node";
     "/client/css/app.css"
   ]
 })
-export class App {
+export class StockApp {
   constructor() {
     console.log("[stocks.app]");
   }

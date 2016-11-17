@@ -8,7 +8,7 @@ import {Manage}                              from "./manage";
 import { Summary }                           from "./summary";
 import { Dashboard }                         from "./dashboard";
 
-import { App }                               from "./app";
+import { StockApp }                               from "./app";
 
 
 
@@ -22,18 +22,18 @@ import { App }                               from "./app";
   providers: [
   ],
   declarations: [
-    App,
+    StockApp,
     Manage,
     Dashboard,
     Summary
   ],
   exports: [
-    App,
+    StockApp,
     Manage,
     Dashboard,
     Summary
   ],
-  bootstrap: [App]
+  bootstrap: [StockApp]
 })
 export class StocksModule {
   constructor() {
