@@ -2,12 +2,14 @@ import { ModuleWithProviders } from "@angular/core";
 import {Routes, RouterModule} from "@angular/router";
 import {Dashboard} from "./dashboard";
 import {Manage} from "./manage";
+import {StockApp} from "./app";
 
 
 
 export const appRoutes: Routes = [
     {
         path: "stocks",
+        component: StockApp,
         children: [
             {
                 path: "Dashboard",
