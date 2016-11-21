@@ -7,18 +7,24 @@ import {Manage} from "./manage";
 
 export const appRoutes: Routes = [
     {
-        path: "Dashboard",
-        component: Dashboard
-    },
-    {
-        path: "Manage",
-        component: Manage
-    },
-    {
-        path: "",
-        redirectTo: "Dashboard",
-        pathMatch: "full"
-    },
+        path: "stocks",
+        children: [
+            {
+                path: "Dashboard",
+                component: Dashboard
+            },
+            {
+                path: "Manage",
+                component: Manage
+            },
+            {
+                path: "",
+                redirectTo: "Dashboard",
+                pathMatch: "full"
+            },
+        ]
+    }
+
 ];
 console.log("[stocks.app.routing]");
 export const appChildRouting: ModuleWithProviders = RouterModule.forChild(appRoutes);
