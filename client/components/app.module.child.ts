@@ -1,5 +1,6 @@
 import { NgModule }                          from "@angular/core";
-import { BrowserModule }                     from "@angular/platform-browser";
+// import { BrowserModule }                     from "@angular/platform-browser";
+import { CommonModule }                      from "@angular/common";
 import { HttpModule }                        from "@angular/http";
 import { FormsModule }                       from "@angular/forms";
 import { appChildRouting }                   from "./app.routing.child";
@@ -14,7 +15,8 @@ import { StockApp }                          from "./app";
 
 @NgModule({
   imports: [
-    BrowserModule,
+    // BrowserModule,
+    CommonModule,
     HttpModule,
     FormsModule,
     appChildRouting,
