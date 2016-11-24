@@ -16,8 +16,8 @@ import {}  from "@types/node";
         <span class="mdl-layout-title">Stock Tracker</span>
         <div class="mdl-layout-spacer"></div>
         <nav class="mdl-navigation mdl-layout--large-screen-only">
-          <a class="mdl-navigation__link" [routerLink]="['Dashboard']">Dashboard</a>
-          <a class="mdl-navigation__link" [routerLink]="['Manage']">Manage</a>
+          <a class="mdl-navigation__link" routerLink="Dashboard">Dashboard</a>
+          <a class="mdl-navigation__link" routerLink="Manage">Manage</a>
         </nav>
       </div>
     </header>
