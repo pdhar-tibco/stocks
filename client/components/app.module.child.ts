@@ -51,5 +51,6 @@ import { StockApp }                          from "./app";
 export default class StocksChildAppModule {
   constructor() {
     console.log("[stocks.child.app.module]");
+    require("/client/css/app.css");
   }
 }
