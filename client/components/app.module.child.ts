@@ -48,7 +48,7 @@ import { StockApp }                          from "./app";
   ],
   bootstrap: [StockApp]
 })
-export class StocksChildAppModule {
+export default class StocksChildAppModule {
   constructor() {
     console.log("[stocks.child.app.module]");
     require("/client/css/app.css");
